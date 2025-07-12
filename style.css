@@ -1,0 +1,127 @@
+body{
+	font-family: 'Georgia', serif; 
+	margin: 0; 
+	padding: 0;
+	background-color: #f5f5f5;	
+	color: #222
+}
+
+
+header{
+	background-color: #3a1f44; 
+	color: white; 
+	padding: 2rem;
+	text-align: center;
+}
+
+.logo-section {
+	display: flex;
+	flex-direction: column; 
+	margin-bottom: 10px; 
+}
+
+.logo {
+	width: 80px;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+main { 
+	max-width: 1000px;
+	margin: 0 auto; 
+	padding: 2rem;
+	background-color: white; 
+} 
+
+.intro h2 {
+	font-size: 1.8rem;
+	color: #3a1f44; 
+}
+
+.intro p {
+	margin-bottom: 1 rem; 
+}
+
+.benefits {
+	margin-top: 2rem;
+}
+
+.benefits h2 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: #3a1f44;
+}
+
+.benefit {
+	margin-bottom: 2rem; 
+}
+
+.benefit h3 {
+	color: #5c2a7a;
+	margin-bottom: 0.5rem;
+}
+
+.cta {
+	text-align: center;
+	padding: 2rem;
+	background-color: #f0e6f5;
+	font-weight: bold; 
+}
+
+.dropdown-section {
+	display: inline-block;
+	text-align: left;
+}
+
+.dropdown-title {
+	font-size: 18px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.dropdown {
+	position: relative;
+}
+
+.dropdown-button {
+	background-color: #8747ff;
+	color: white;
+	padding: 14px 14px;
+	font-size: 36px;
+	border: 4px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.dropdown-content {
+	opacity: 0; 
+	transform: translateY(-10px);
+	transition: opacity 00.3s ease, transform 0.3s ease;
+	visibility: hidden; 
+	position: absolute;
+	background-color: #d6d6e0;
+	min-width: 200px;
+	box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+	z-index: 1; 
+	border-radius: 4ppx;
+	overflow: hidden;
+}
+
+.dropdown-content a {
+	color: #ffffff;
+	padding: 14px 14px;
+	text-decoration: none;
+	display: block;
+	transition: ease-in 0.3s;
+}
+
+.dropdown-content a:hover {
+	background-color: #d3d3d3;
+}
+
+.dropdown-content,show {
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+}
