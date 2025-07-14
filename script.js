@@ -17,22 +17,9 @@ window.onclick = function (event) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.dropdown-button');
-    const menu = document.getElementById('dropdownMenu');
 
-    button.addEventListener('click', () => {
-        menu.classList.toggle('show');
-    });
-
-    //Toggle open/close on button click
     button.addEventListener('click', (e) => {
         e.stopPropagation(); //prevent window listenr form instantly closing it 
-        menu.classList.toggle('show');
-    });
-
-    //Close dropdown when clicking outside
-    window.addEventListener('click', (e) => {
-        if (!button.contains(e.target)) {
-            menu.classList.remove('show');
-        }
+        toggleDropdown();
     });
 });

@@ -178,7 +178,7 @@ footer {
 }
 
 .dropdown-content,
-show {
+.show {
 	opacity: 1;
 	transform: translateY(0);
 	visibility: visible;
