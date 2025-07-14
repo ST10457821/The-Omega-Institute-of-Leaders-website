@@ -5,10 +5,10 @@ function toggleDropdown () {
 // Close the dropdown if clicked outside
 window.onclick = function (event) {
     if (!event.target.matches('dropdown-button')) {
-        var dropdowns = document.getElementByClassName("dropdown-content");
-        for (var i = 0; i < dropdown.length; i++) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            if (openDropdoww.classList, contains('show')) {
+            if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
             }
         }
@@ -16,7 +16,7 @@ window.onclick = function (event) {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('dropdownButton');
+    const button = document.querySelector('.dropdown-button');
     const menu = document.getElementById('dropdownMenu');
 
     button.addEventListener('click', () => {
