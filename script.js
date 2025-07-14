@@ -1,5 +1,12 @@
 function toggleDropdown () {
-    document.getElementById("dropdownMenu").classList.toggle("show");
+    console.log("toggling");
+    const dropdown = document.getElementById("dropdownMenu");
+    if (dropdown && dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+    } else {
+        dropdown?.classList.add('show');
+    }
+
 }
 
 // Close the dropdown if clicked outside
@@ -19,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.dropdown-button');
 
     button.addEventListener('click', (e) => {
-        e.stopPropagation(); //prevent window listenr form instantly closing it 
+        e.preventDefault(); //prevent window listenr form instantly closing it 
+        e.stopPropagation();
         toggleDropdown();
     });
 });
