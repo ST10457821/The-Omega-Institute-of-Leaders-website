@@ -31,3 +31,46 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleDropdown();
     });
 });
+
+
+document.getElementById("organizationForm").addEventListener("submit", function (e0){
+    e.preventDefault();
+
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+});
+
+//send EmailJS
+document.getElementById("organizationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    
+    name = document.getElementById("name").value;
+    phone = document.getElementById("phone").value;
+    applicants = document.getElementById("applicants").value;
+
+    emailjs.send("service_3ako77n", "template_zcx9q0m", {
+        name: name,
+        phone: phone,
+        applicants: applicants,
+    })
+    .then(() => {
+        //show toast
+        const toast = document.getElementById("toast");
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
+
+        //Reset form
+        document.getElementById("organizationFrom").reset();
+    })
+    .catch((error) => {
+        alert("Failed to send form. Please try again.");
+        console.error("EmailJS Error:", error);
+    });
+});
