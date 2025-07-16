@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="form.css">
-    <title>Selecting a Strategy</title>
-    <script src="https://cdn.jsdelivr.net/npm/email.js-com@3/dist/email.min.js"></script>
-    <script>
-        (function () {
-            email.js.init("public_GUDE1mq6huakwwneq");
-        })();
-    </script>
-</head>
-<body>
-    <div class="container">
-         <img src="./static/oil_logo.png" alt="Omega Logo" class="logo" />
-         <h2>SELECTING A STRATEGY - APPLICATION FORM</h2>
 
-         <form id="organizationForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://fonts.googleapis.com/css2?family=Rosarivo:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="form.css">
+        <title>Selecting a Strategy</title>
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script>
+            (function () {
+                emailjs.init("public_GUDE1mq6huakwwneq");
+            })();
+        </script>
+    </head>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" required />
+    <body>
+        <div class="container">
+            <img src="./static/oil_logo.png" alt="Omega Logo" class="logo" />
+            <h2>SELECTING A STRATEGY - APPLICATION FORM</h2>
 
-            <label for="applicants">Number of Applicants:</label>
-            <input type="number" id="applicants" required />
+            <form id="organizationForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required />
 
-            <button type="submit">Submit</button>
-         </form>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required />
+
+                <label for="applicants">Number of Applicants:</label>
+                <input type="number" id="applicants" required />
+
+                <button type="submit">Submit</button>
+            </form>
         </div>
-        
-    <div id="toast">Form Submitted Successfully!</div>
 
-    <script src="script.js"></script>
-</body>        
+        <div id="toast">Form Submitted Successfully!</div>
+
+        <script src="script.js"></script>
+    </body>
+
 </html>

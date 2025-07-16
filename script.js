@@ -25,15 +25,55 @@ window.onclick = function (event) {
 document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('.dropdown-button');
 
-    button.addEventListener('click', (e) => {
-        e.preventDefault(); //prevent window listenr form instantly closing it 
-        e.stopPropagation();
-        toggleDropdown();
-    });
+    if (button) {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); //prevent window listenr form instantly closing it 
+            e.stopPropagation();
+            toggleDropdown();
+        });
+    }
+
+    let headerEl = document.querySelector('header');
+    if (!headerEl) {
+        headerEl = document.createElement("header");
+        headerEl.innerHTML = `
+        <a href="/">
+            <div class="logo-section">
+                    <img src="./static/oil_logo.png" alt="Omega Logo" class="logo" />
+                    <h1 class="logo-text">The Omega Institute<br>of Leaders®</h1>
+            </div>
+        </a>
+
+            <div class="dropdown">
+                <button class="dropdown-button">
+                    Our Services
+                    <span class="chevron">&#x25BC;</span>
+                </button>
+                <div id="dropdownMenu" class="dropdown-content">
+                    <a href="aligning-the-organization.html">Aligning the Organization</a>
+                    <a href="selecting-the-leadership.html">Selecting the Leadership</a>
+                    <a href="selecting-a-strategy.html">Selecting a Strategy</a>
+                    <a href="laws-of-governance.html">Laws of Governance</a>
+                    <a href="evaluation.html">Evaluation</a>
+                    <a href="resources-management.html">Resources Management</a>
+                    <a href="risk-management.html">Risk Management</a>
+                    <a href="coaching.html">Coaching</a>
+                    <a href="counselling.html">Counselling</a>
+                </div>
+       `;
+        const body = document.body;
+        body.style.display = "flex";
+        body.style.flexDirection = "column";
+        body.style.width = "100%";
+        headerEl.style.padding = "0em";
+        headerEl.style.width = "100%";
+        headerEl.style.marginBottom = "1rem";
+        document.body.insertBefore(headerEl, document.body.firstChild);
+    }
 });
 
 
-document.getElementById("organizationForm").addEventListener("submit", function (e0){
+document.getElementById("organizationForm")?.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const toast = document.getElementById("toast");
@@ -42,35 +82,4 @@ document.getElementById("organizationForm").addEventListener("submit", function 
     setTimeout(() => {
         toast.classList.remove("show");
     }, 3000);
-});
-
-//send EmailJS
-document.getElementById("organizationForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    
-    name = document.getElementById("name").value;
-    phone = document.getElementById("phone").value;
-    applicants = document.getElementById("applicants").value;
-
-    emailjs.send("service_3ako77n", "template_zcx9q0m", {
-        name: name,
-        phone: phone,
-        applicants: applicants,
-    })
-    .then(() => {
-        //show toast
-        const toast = document.getElementById("toast");
-        toast.classList.add("show");
-
-        setTimeout(() => {
-            toast.classList.remove("show");
-        }, 3000);
-
-        //Reset form
-        document.getElementById("organizationFrom").reset();
-    })
-    .catch((error) => {
-        alert("Failed to send form. Please try again.");
-        console.error("EmailJS Error:", error);
-    });
 });
