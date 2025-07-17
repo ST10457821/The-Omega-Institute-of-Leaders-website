@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+document.getElementById("organizationForm").addEventListener("submit", function (e0){
+    e.preventDefault();
+
+    const toast = document.getElementById("toast");
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 3000);
+});
+=======
 document.getElementById("organizationForm").addEventListener("submit", function (e0){
     e.preventDefault();
 
@@ -185,3 +197,4 @@ document.getElementById("organizationForm").addEventListener("submit", function 
 
 
 
+>>>>>>> 2a05936b9b053646a325a37e8d859155553abb3c
