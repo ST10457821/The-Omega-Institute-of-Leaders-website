@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-document.getElementById("organizationForm").addEventListener("submit", function (e0){
-    e.preventDefault();
-
-    const toast = document.getElementById("toast");
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 3000);
-});
-=======
-document.getElementById("organizationForm").addEventListener("submit", function (e0){
+document.getElementById("organizationForm").addEventListener("submit", function (e){
     e.preventDefault();
 
     const toast = document.getElementById("toast");
