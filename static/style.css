@@ -199,3 +199,26 @@ footer {
 	opacity: 1;
 	visibility: visible;
 }
+
+/*for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+	body {
+		font-size 16px;
+		padding: 10px;
+	}
+	
+	.container {
+		flex-direction: column; 
+		padding: 10px;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	nav ul {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}		
