@@ -73,12 +73,13 @@ header {
 }
 
 main {
-	max-width: 1000px;
+	width: 100%;
 	margin: 0 auto;
 	padding: 2rem;
 	background-color: white;
 	margin-bottom: 1rem;
 }
+
 
 .intro h2 {
 	font-size: 1.8rem;
@@ -200,15 +201,79 @@ footer {
 	visibility: visible;
 }
 
-/*for screens smaller than 768px */
-@media screen and (max-width: 768px) {
-	select, button, input {
-		width: 40%;
-}
+/* Mobile styles */
 
-/* Larger Screens */
-@media (min-width: 900px) {
-	select, button, input {
-		width: 40%;
+@media only screen and (max-width: 768px) {
+
+	body {
+		width: 100vw;
+		box-sizing: border-box;
+		/* Add this line */
+	}
+
+	/* Set header and main content to inherit body width */
+	header,
+	main {
+		width: inherit;
+		box-sizing: border-box;
+		/* Add this line */
+	}
+
+	/* Add some additional mobile-specific styles */
+	header {
+		padding: 0rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.dropdown {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		margin: 0rem;
+		max-width: 100%;
+	}
+
+	.logo-section {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.logo {
+		width: 100px;
+		height: auto;
+	}
+
+	.logo-text {
+		font-size: 1.5rem;
+	}
+
+	section > h1,
+	section > h2,
+	section > h3,
+	section > h4,
+	section > h5,
+	section > h6 {
+		font-size: 1.2em;
+	}
+
+	.container {
+		padding: 20px;
+	}
+
+	.intro h2 {
+		font-size: 2rem;
+	}
+
+	footer {
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
 	}
 }
